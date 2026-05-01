@@ -1,0 +1,17 @@
+# User documents — stay local (replace example .md files with your own)
+inputs/*.pdf
+inputs/*.xlsx
+inputs/*.xls
+inputs/*.docx
+inputs/*.csv
+inputs/*.pptx
+
+# Agent outputs — stay local
+outputs/*
+!outputs/.gitkeep
+
+# OS
+.DS_Store
+
+# Environment
+.env
