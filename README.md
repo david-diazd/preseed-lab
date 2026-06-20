@@ -5,15 +5,15 @@
 <h1 align="center">preseed-lab</h1>
 
 <p align="center">
-  AI-powered toolkit to help founders prepare and nail their Pre-Seed fundraising round.<br/>
-  Specialized agents analyze your pitch deck, financials, market, team, and strategy — and give you honest, actionable feedback.
+  AI-powered toolkit to help founders build, launch, and fundraise their Pre-Seed startup.<br/>
+  62 specialized agents across CEO, CTO, and CMO roles — plus 11 VC simulation agents that give you honest investor feedback before you're in the room.
 </p>
 
 <p align="center">
   <a href="#quick-start">Get started</a> ·
+  <a href="#agents-by-role">See all agents</a> ·
   <a href="VC-agent/templates/pitch-deck-template.md">Pitch deck template</a> ·
-  <a href="VC-agent/templates/financial-model-template.md">Financial model</a> ·
-  <a href="VC-agent/templates/inputs">See examples</a>
+  <a href="VC-agent/templates/financial-model-template.md">Financial model</a>
 </p>
 
 <p align="center">
@@ -24,17 +24,41 @@
 
 ## What is this?
 
-**preseed-lab** is a clonable repo that runs specialized AI agents (via Claude Code) to simulate the feedback a real investor would give you — before you're actually in the room.
+**preseed-lab** is a clonable repo that runs specialized AI agents (via Claude Code) to help you with every aspect of building a Pre-Seed startup — from strategy and product to marketing and fundraising.
 
-Drop your pitch deck, financials, and team info. Run the agents. Get structured, honest feedback that helps you find and fix weaknesses before they cost you a deal.
+Three role-based suites (**CEO**, **CTO**, **CMO**) cover the operational side, while **VC-agent** simulates the feedback a real investor would give you — before you're actually in the room.
 
 No servers. No accounts. Just `git clone` and `claude`.
 
 ---
 
-## Agents
+## Agents by role
 
-Eleven specialized agents, each focused on a specific part of your startup:
+### CEO — Strategy, Fundraising, Legal & Market (24 agents)
+
+| Domain | Agents | What they do |
+|---|---|---|
+| **Fundraising** (9) | pitch-deck, financial-model, data-room, investor-research, fundraising-email, accelerator-application, board-update, market-research, competitive-analysis | Build your deck, model, data room, investor pipeline, and outreach |
+| **Legal** (5) | contract-review, terms-of-service, privacy-policy, process-docs, proposal-generation | Contracts, ToS, privacy policies, SOPs, and commercial proposals |
+| **Strategy** (6) | vision-mission, okr-planning, business-model-canvas, hiring-plan, cap-table, term-sheet-review | Vision, OKRs, business model, hiring, cap table, and term sheets |
+| **Market** (4) | market-sizing, industry-analysis, customer-discovery, market-entry | TAM/SAM/SOM, industry analysis, customer discovery, market entry |
+
+### CTO — Product, Engineering & Technology (13 agents)
+
+| Domain | Agents | What they do |
+|---|---|---|
+| **Product** (5) | prd-writing, mvp-scoping, roadmap-planning, user-research-synthesis, feedback-synthesis | PRDs, MVP scoping, roadmaps, user research, and feedback analysis |
+| **Engineering** (8) | architecture-review, tech-stack-evaluation, technical-debt, api-design, security-checklist, devops-setup, scalability-plan, technical-due-diligence | Architecture, stack evaluation, APIs, security, DevOps, and scalability |
+
+### CMO — Marketing, Growth & Brand (14 agents)
+
+| Domain | Agents | What they do |
+|---|---|---|
+| **Marketing** (7) | content-strategy, launch-strategy, landing-page, cold-outreach, sales-script, social-content, seo-technical | Content, launch plans, landing pages, outreach, sales scripts, SEO |
+| **Growth** (4) | growth-model, analytics-setup, pricing-strategy, partnership-strategy | Growth loops, analytics, pricing, and partnerships |
+| **Brand** (3) | brand-positioning, messaging-framework, paid-ads-plan | Positioning, messaging, and paid acquisition |
+
+### VC-agent — Investor Simulation (11 agents)
 
 | Agent | Analyzes | Data source |
 |---|---|---|
@@ -43,18 +67,31 @@ Eleven specialized agents, each focused on a specific part of your startup:
 | **Financial Analyst** | Unit economics, projections, burn rate | Your documents |
 | **VC Partner** | Investment decision simulation, deal-breakers | Your documents |
 | **Growth Expert** | GTM strategy, traction, growth levers | Your documents |
-| **Founder Validator** | Team authority, track record, credibility | Web search (LinkedIn, X) |
+| **Founder Validator** | Team authority, track record, credibility | Web search |
 | **Competitive Intelligence** | Real competitor landscape, funding, traction | Web search |
-| **Market Validator** | Fact-checks your market claims against external sources | Web search |
-| **Checklist Evaluator** | Pre-Seed readiness across 10 structured criteria | Your documents |
-| **Global Scorer** | Weighted global score with automatic deal-breaker detection | Agent outputs |
-| **VC Q&A Simulator** | Interactive investor meeting simulation with feedback | Your documents + agent outputs |
+| **Market Validator** | Fact-checks your market claims against real data | Web search |
+| **Checklist Evaluator** | Pre-Seed readiness across 10 criteria | Your documents |
+| **Global Scorer** | Weighted global score + deal-breaker detection | Agent outputs |
+| **VC Q&A Simulator** | Interactive investor meeting simulation | Your documents + agent outputs |
+
+---
+
+## Skills
+
+Reusable workflows that chain multiple agents or provide structured outputs:
+
+| Scope | Skills |
+|---|---|
+| **Shared** (5) | weekly-report, swot-analysis, decision-framework, meeting-notes, competitor-monitor |
+| **CEO** (4) | fundraising-pipeline, board-meeting-prep, investor-update, strategic-review |
+| **CTO** (4) | sprint-planning, incident-postmortem, tech-radar, architecture-decision-record |
+| **CMO** (4) | campaign-launch, content-calendar, performance-report, ab-test-analysis |
 
 ---
 
 ## Feedback profiles
 
-Each agent adapts its tone to the profile you choose:
+Each VC-agent adapts its tone to the profile you choose:
 
 | Profile | Style |
 |---|---|
@@ -74,13 +111,13 @@ Each agent adapts its tone to the profile you choose:
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/preseed-lab.git
+git clone https://github.com/david-diazd/preseed-lab.git
 cd preseed-lab
 ```
 
 ### 2. Add your documents
 
-`inputs/` already has example files showing the expected format for each document. Replace them with your own:
+`inputs/` already has example files showing the expected format. Replace them with your own:
 
 ```
 inputs/
@@ -97,52 +134,52 @@ inputs/
 claude
 ```
 
-The [`/use-cases`](use-cases/) folder has ready-to-use prompts for every scenario. Copy and paste directly into Claude Code. For example:
+Then reference the agent you want to use:
 
-**Quick readiness check:**
+**CEO — Improve your pitch deck:**
 ```
-@VC-agent/agents/checklist-evaluator.md
+@CEO/agents/fundraising/pitch-deck.md
 
-Evaluate my startup's Pre-Seed readiness using all documents in inputs/
-and save the result to outputs/checklist_readiness.md
+Review my pitch deck using inputs/ and save to outputs/pitch_deck_review.md
 ```
 
-**Simulate an investor meeting:**
+**CTO — Scope your MVP:**
+```
+@CTO/agents/product/mvp-scoping.md
+
+Help me scope our MVP using inputs/ and save to outputs/mvp_scope.md
+```
+
+**CMO — Plan your launch:**
+```
+@CMO/agents/marketing/launch-strategy.md
+
+Create a launch strategy using inputs/ and save to outputs/launch_plan.md
+```
+
+**VC — Simulate an investor meeting:**
 ```
 @VC-agent/agents/vc-qa-simulator.md @VC-agent/profiles/brutal-vc.md
 
 Run a Q&A simulation using inputs/ and outputs/ and save to outputs/qa_simulation.md
 ```
 
-See all available workflows → [`/use-cases`](use-cases/)
+See all available workflows in [`/use-cases`](use-cases/).
 
 ### 4. Review results
 
-Each output includes: diagnosis · main problems · recommendations · readiness score (1–10).
+Each output includes structured analysis with diagnosis, key findings, recommendations, and scores where applicable.
 
-The **Global Scorer** adds deal-breaker detection — if any hard blockers are found, it stops and tells you exactly what to fix before talking to investors.
+The VC-agent **Global Scorer** adds deal-breaker detection — if any hard blockers are found, it tells you exactly what to fix before talking to investors.
 
 ### Tips
 
-- Run the specialized agents first, then **Global Scorer** for the full picture.
-- Use **Brutal VC** profile when you feel ready; start with **Friendly Mentor** if it's your first pass.
-- Run **VC Q&A Simulator** last — it's the closest thing to a real investor meeting.
-- Re-run agents after making changes to track your improvement over time.
-- The scoring is relative — use it to compare versions of your materials, not as an absolute measure.
-
----
-
-## Use cases
-
-Not sure where to start? Pick the workflow that fits your situation:
-
-| Use case | When to use | Time |
-|---|---|---|
-| [Full analysis](VC-agent/use-cases/01-full-analysis.md) | First run or after major changes to your materials | ~20 min |
-| [Quick readiness check](VC-agent/use-cases/02-quick-readiness-check.md) | Fast yes/no before talking to investors | ~5 min |
-| [Pitch deck review](VC-agent/use-cases/03-pitch-deck-review.md) | Pressure-test your deck before sending to VCs | ~8 min |
-| [Market deep dive](VC-agent/use-cases/04-market-deep-dive.md) | Validate TAM, competition, and market claims | ~10 min |
-| [Investor meeting prep](VC-agent/use-cases/05-investor-meeting-prep.md) | Practice Q&A the day before a VC meeting | ~8 min |
+- **Building?** Start with CTO agents (MVP scoping → architecture → roadmap).
+- **Fundraising?** Start with CEO agents (market sizing → pitch deck → financial model → data room).
+- **Launching?** Start with CMO agents (brand positioning → messaging → launch strategy).
+- **Meeting investors?** Run VC-agent agents, then Global Scorer, then Q&A Simulator last.
+- Use **Brutal VC** profile when you feel ready; start with **Friendly Mentor** for your first pass.
+- Re-run agents after making changes to track improvement over time.
 
 ---
 
@@ -150,13 +187,13 @@ Not sure where to start? Pick the workflow that fits your situation:
 
 ```
 /inputs        → Add your documents here (examples included)
-/outputs       → Analysis results saved here
-/use-cases     → Ready-to-use prompt workflows — start here
-/VC-agent      → Agent engine (no need to touch this)
-  /agents      → 11 specialized agent prompts
-  /profiles    → 3 feedback style profiles
-  /templates   → Pitch deck, financial model, and investor question templates
-  /related-info → Research, insights, and resources
+/outputs       → Analysis results saved here (gitignored)
+/CEO           → 24 agents + 4 skills (strategy, fundraising, legal, market)
+/CTO           → 13 agents + 4 skills (product, engineering)
+/CMO           → 14 agents + 4 skills (marketing, growth, brand)
+/skills        → 5 shared skills (weekly report, SWOT, decisions, meetings, competitors)
+/VC-agent      → 11 investor simulation agents + 3 feedback profiles + templates
+/use-cases     → Ready-to-use prompt workflows
 README.md      → You are here
 ```
 
