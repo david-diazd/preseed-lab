@@ -6,9 +6,12 @@ inputs/*.docx
 inputs/*.csv
 inputs/*.pptx
 
+
+
 # Agent outputs — stay local
 outputs/*
 !outputs/.gitkeep
+
 
 # OS
 .DS_Store
@@ -17,3 +20,6 @@ outputs/*
 .env
 
 docs
+.gstack/
+
+

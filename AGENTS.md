@@ -17,7 +17,7 @@ Herramienta para ayudar a founders a preparar su ronda Pre-Seed mediante agentes
 README.md      → Documentación principal
 ```
 
-El usuario corre `claude` desde la raíz del repo. Las referencias a agentes usan `@CEO/agents/...`, `@CTO/agents/...`, `@CMO/agents/...` y `@VC-agent/agents/...`. Los paths `inputs/` y `outputs/` resuelven desde la raíz.
+El usuario corre `claude` desde la raíz del repo. Para usar un agente, referencia el archivo markdown correspondiente. Los paths `inputs/` y `outputs/` resuelven desde la raíz.
 
 ---
 
@@ -113,7 +113,7 @@ El usuario corre `claude` desde la raíz del repo. Las referencias a agentes usa
 
 1. El usuario sube sus documentos a `inputs/`
 2. Abre Claude Code desde la raíz del repo
-3. Referencia el agente deseado (e.g. `@CEO/agents/strategy/okr-planning.md`)
+3. Referencia el agente deseado (e.g. lee `CEO/agents/strategy/okr-planning.md` y sigue su workflow)
 4. Los resultados se guardan en `outputs/`
 
 ---
