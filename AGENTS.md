@@ -48,11 +48,11 @@ El usuario corre `claude` desde la raíz del repo. Para usar un agente, referenc
 | `CTO/agents/product/` | prd-writing, mvp-scoping, roadmap-planning, user-research-synthesis, feedback-synthesis |
 | `CTO/agents/engineering/` | architecture-review, tech-stack-evaluation, technical-debt, api-design, security-checklist, devops-setup, scalability-plan, technical-due-diligence |
 
-### CMO (14 agentes)
+### CMO (15 agentes)
 | Dominio | Agentes |
 |---|---|
 | `CMO/agents/marketing/` | content-strategy, launch-strategy, landing-page, cold-outreach, sales-script, social-content, seo-technical |
-| `CMO/agents/growth/` | growth-model, analytics-setup, pricing-strategy, partnership-strategy |
+| `CMO/agents/growth/` | growth-model, analytics-setup, pricing-strategy, partnership-strategy, lead-research |
 | `CMO/agents/brand/` | brand-positioning, messaging-framework, paid-ads-plan |
 
 ### VC-agent (11 agentes)
